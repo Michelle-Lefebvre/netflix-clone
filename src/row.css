@@ -1,6 +1,10 @@
 .row {
     margin-left: 20px;
+    color: #fff;
+}
 
+h2 {
+    margin: 20px 0;
 }
 
 .row__posters {
