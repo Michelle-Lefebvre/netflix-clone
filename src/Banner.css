@@ -28,6 +28,17 @@
     margin: 0.5rem 1rem 0 0;
 }
 
+.btnRead {
+    cursor: pointer;
+    color: lightgrey;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-weight: 900;
+    font-style: italic;
+    font-size: larger;
+}
+
 .banner__button:hover {
     color: rgb(51, 51, 51);
     background-color: whitesmoke;

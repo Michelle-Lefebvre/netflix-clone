@@ -6,6 +6,7 @@ import './Banner.css';
 
 function Banner() {
     const [movie, setMovie] = useState([]);
+    const [readMore, setReadMore] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -22,8 +23,9 @@ function Banner() {
 
     // if description is too long only show n number of characters with ...
     function truncate(str, n) {
-        return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+        return str?.length > n ? str.substr(0, n - 1) + "" : str;
     }
+
     return (
 
         <header className="banner"
@@ -43,7 +45,10 @@ function Banner() {
                     <button className="banner__button">My List</button>
                 </div>
                 <h1 className="banner__description">
-                    {truncate(movie?.overview, 150)}
+                    {readMore ? truncate(movie?.overview, 150) : truncate(movie?.overview, movie?.overview.length - 1)}
+
+                    <button className="btnRead" onClick={() => setReadMore(!readMore)}>{readMore ? '...' : 'show less'}</button>
+
                 </h1>
             </div>
             <div className="bannner--fadeBottom"></div>
